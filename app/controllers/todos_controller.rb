@@ -25,5 +25,6 @@ class TodosController < ApplicationController
         completed=params[:completed]
         todo=Todo.find(id)
         render plain: todo.to_pleasent_text
+    end
 
 end 
