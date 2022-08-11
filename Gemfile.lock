@@ -117,6 +117,7 @@ GEM
     minitest (5.16.2)
     msgpack (1.5.4)
     msgpack (1.5.4-java)
+    mysql2 (0.5.4)
     net-imap (0.2.3)
       digest
       net-protocol
@@ -198,7 +199,6 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
-    sqlite3 (1.4.4)
     stimulus-rails (1.1.0)
       railties (>= 6.0.0)
     strscan (3.0.4)
@@ -246,11 +246,11 @@ DEPENDENCIES
   debug
   importmap-rails
   jbuilder
+  mysql2 (~> 0.5.4)
   puma (~> 5.0)
   rails (~> 7.0.3, >= 7.0.3.1)
   selenium-webdriver
   sprockets-rails
-  sqlite3 (~> 1.4)
   stimulus-rails
   turbo-rails
   tzinfo-data
