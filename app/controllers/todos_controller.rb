@@ -6,4 +6,5 @@ class TodosController < ApplicationController
         id=params[:id]
         todo=Todo.find(id)
         render plain: todo.to_pleasent_string
+    end
 end 
