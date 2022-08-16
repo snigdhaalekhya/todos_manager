@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   # get "todos/:id/edit" , to: "todos#edit"
   # put "todos/:id" , to: "todos#update"
   # delete "todos/:id" , to: "todos#destroy"
-  
+  get "/" => "home#index"
   resources :todos
+  resources :users
 end

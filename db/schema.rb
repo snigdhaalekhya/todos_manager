@@ -10,11 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_16_090141) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_16_112416) do
   create_table "todos", charset: "utf8", force: :cascade do |t|
     t.text "todo_text"
     t.date "due_date"
     t.boolean "completed"
+    t.bigint "user_id"
   end
 
   create_table "todos1", charset: "utf8", force: :cascade do |t|
