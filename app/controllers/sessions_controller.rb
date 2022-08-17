@@ -4,7 +4,8 @@ class SessionsController < ApplicationController
     def create
         user=User.find_by(email: params[:email])
         if user && user.authenticate(params[:password])
-            render plain: "You have entered correct password"
+            session[:current_user_id]=user.id
+            redirect_to "/"
        else
             render plain: "Incorrect password"
        end
