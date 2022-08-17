@@ -1,7 +1,7 @@
 class TodosController < ApplicationController 
     def index
         #render plain: Todo.order(:due_date).map{|todo| todo.to_pleasent_string}.join("\n")
-        current_user
+        @todos=Todo.of_user(current_user)
         render "index"
     end
 
@@ -15,6 +15,7 @@ class TodosController < ApplicationController
             todo_text: todo_text,
             due_date: due_date,
             completed: false,
+            user_id: current_user.id,
         )
         #response_text= "new todo #{new_todo.id}"
         #render plain:  response_text
@@ -23,7 +24,7 @@ class TodosController < ApplicationController
 
     def show
         id=params[:id]
-        todo=Todo.find(id)
+        todo=Todo.of_user(current_user).find(id)
         render plain: todo.to_pleasent_string
     end
 
@@ -35,14 +36,14 @@ class TodosController < ApplicationController
     def update
         id=params[:id]
         completed=params[:completed]
-        todo=Todo.find(id)
+        todo=Todo.of_user(current_user).find(id)
         todo.completed=completed
         todo.save!
         redirect_to todos_path
     end
     def destroy
         id=params[:id]
-        todo=Todo.find(id)
+        todo=Todo.of_user(current_user).find(id)
         todo.destroy
         redirect_to todos_path
     end

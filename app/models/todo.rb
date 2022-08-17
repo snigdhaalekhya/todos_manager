@@ -3,7 +3,9 @@ class Todo<ActiveRecord::Base
    def due_today?
     due_date=Date.today
    end
-
+    def self.of_user(user)
+      all.where(user_id: user.id)
+    end
     def to_displayable_string
       display_status = completed ? "[X]" : "[ ]"
       dispaly_date=due_today ? nil : due_date

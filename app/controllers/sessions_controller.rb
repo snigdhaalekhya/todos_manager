@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController 
+    skip_before_action :ensure_user_logged_in
     def new
     end
     def create
@@ -9,6 +10,11 @@ class SessionsController < ApplicationController
        else
             render plain: "Incorrect password"
        end
+    end
 
+    def destroy
+        session[:current_user_id] = nil
+        @current_user = nil
+        redirect_to "/"
     end
 end
