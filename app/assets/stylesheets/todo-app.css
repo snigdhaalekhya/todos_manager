@@ -75,9 +75,18 @@ body {
       width: 16px;
       height: 16px; 
   }
+  .TodoItem-container:hover{
+    background-color: #F1EDF7;
+  }
+  .TodoItem-delete > img {
+    width: 16px;
+  }
   .TodoItem-delete{
-      visibility: hidden;
-      margin-left: 8px;
+      
+      margin-left: 10px;
+  }
+  .TodoItem-container:hover.TodoItem-delete{
+    visibility: visible;
   }
   .TodoSection{
       margin-bottom: 20px;

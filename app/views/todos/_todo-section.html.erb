@@ -17,6 +17,11 @@
                                             <% if show_due_date %>
                                                <%= todo.due_date %>
                                             <% end %>
+                                            <a href="javascript:void(0)" class="TodoItem-delete">
+                                            <%= form_with(url: "/todos/#{todo.id}" , method: "delete") do %>
+                                            <input type="image" src="https://pic.onlinewebfonts.com/svg/img_446501.png" width="12px" class="TodoItem-delete">
+                                            <% end %>
+                                            </a>
                                         </div>
                                     </li>
                                     <% end %>
