@@ -7,4 +7,6 @@ class HomeController < ApplicationController
             render "index"
         end
     end
+    def new
+    end
 end

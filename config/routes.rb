@@ -10,11 +10,11 @@ Rails.application.routes.draw do
   # get "todos/:id/edit" , to: "todos#edit"
   # put "todos/:id" , to: "todos#update"
   # delete "todos/:id" , to: "todos#destroy"
-  get "/" => "home#index"
+  get "/" => "home#index", as: :home
   resources :todos
   resources :users
+  #get "sigin1", to: "sigin1#new"
   get "/signin" => "sessions#new", as: :new_sessions
   post "/signin" => "sessions#create", as: :sessions
-  get "/signout" => "sessions#new", as: :destroy_sessions
   delete "/signout" => "sessions#destroy", as: :destroy_session
 end

@@ -6,6 +6,17 @@
     font-size: 16px;
     margin-bottom: 20px;
 }
+.UserHeader1{
+    background-color: darkred;
+    font-size: 14px;
+    color: white;
+    margin-bottom: 20px;
+    
+    display: flex;
+    justify-content:space-between;
+    width: 80px;
+    height: 20px;
+}
 .UserHeader{
     padding: 10px;
     background-color: lavender;
@@ -14,6 +25,7 @@
     display: flex;
     justify-content:space-between;
 }
+
 .Flash-error{
     color: darkred;
     margin-bottom: 20px;
