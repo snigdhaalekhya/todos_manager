@@ -24,6 +24,7 @@ class TodosController < ApplicationController
         #render plain:  response_text
         else
             flash[:error]= new_todo.errors.full_messages.join(", ")
+            redirect_to todos_path
       end
     end
 
